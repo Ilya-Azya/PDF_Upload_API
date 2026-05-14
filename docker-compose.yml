@@ -1,0 +1,10 @@
+services:
+  pdf-uploader:
+    build: .
+    ports:
+      - "${PORT:-3000}:${PORT:-3000}"
+    environment:
+      PORT: ${PORT:-3000}
+      UPLOADS_DIR: ${UPLOADS_DIR:-uploads}
+    volumes:
+      - ./uploads:/app/uploads
